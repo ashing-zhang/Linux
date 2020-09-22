@@ -360,3 +360,9 @@ find命令功能非常强大，通常用来在特定的目录下搜索符合条�
 3、新建pull request
 4、等待作者操作审核
 ```
+
+41、Github pages
+```
+-Github pages仅支持静态网页
+-仓库里面只能是.html文件
+```
