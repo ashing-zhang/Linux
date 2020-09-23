@@ -479,6 +479,23 @@ find命令功能非常强大，通常用来在特定的目录下搜索符合条�
  55、Github免密登录
 
 ```
-使用SSH
+使用SSH：
+	1、cd ~/.ssh：切换到ssh文件夹
+	2、cat id_rsa.pub：打开公钥所在文件
+	3、将公钥复制到github的settings中的SSH keys中
+	4、在本地文件仓库（本地文件夹）中打开git命令行
+	5、运行git命令行：git remote add 远程库地址别名 远程库git地址（即***.git）
+```
+
+56、：set nu或：set number
+
+```
+为vi设置行号，如果要取消，用：set nonu命令
+```
+
+57、Gitlab
+
+```
+局域网中的Git
 ```
 
