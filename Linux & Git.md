@@ -386,7 +386,99 @@ find命令功能非常强大，通常用来在特定的目录下搜索符合条�
 44、将本地代码上传到远程仓库
 
 ```
--git remote add 远端仓库名字 git_address  
--git push -u 远端仓库名字 master 
+-git remote add 远端仓库名字 git_address（相当于给git_address起别名；此操作可以在最开始的时候先完成）  
+-git push 远端仓库名字 master 
+```
+
+45、git log
+
+```
+-多屏显示控制方式：空格--向下翻页；b--向上翻页；q--退出
+-git log --pretty=oneline:每一条git记录用一行表示
+-git log --oneline：更加简洁
+-git reflog--HEAD@{离当前的步数}
+```
+
+46、git reset基本命令
+
+```
+先用git reflog查询各版本的信息（hash值）
+-git reset --hard 对应步的hash值（局部索引值）
+-git reset --hard HEAD^：退回到上一步（几个^代表回退几步）
+-git reset --hard HEAD~n：回退n步
+```
+
+47、git reset命令的三个参数对比
+
+```
+-soft参数
+	仅仅在本地库移动HEAD指针
+-mixed参数
+	在本地库移动HEAD指针
+	重置暂存区
+-hard参数
+	在本地库移动HEAD指针
+	重置暂存区
+	重置工作区
+```
+
+48、git reset找回删除的文件
+
+```
+前提：删除前，文件存在时的状态提交到了本地库
+```
+
+49、git diff
+
+```
+-git diff [文件名]：将工作区中的文件和暂存区进行比较
+-git diff [本地库中历史版本][文件名]：将工作区中的文件和本地库历史记录比较
+-不带文件名比较多个文件
+```
+
+50、git分支操作
+
+```
+-git branch -v：查看git分支
+-git branch 分支名：创建新分支
+-git checkout 分支名：切换分支
+```
+
+51、合并分支
+
+```
+-第一步：切换到接受修改的分支（被合并，增加新内容）上
+	git checkout[被合并分支名]
+-第二步：执行merge命令
+	git merge[有新内容分支名]
+```
+
+52、分支冲突的解决
+
+```
+-第一步：编辑文件，删除特殊符号
+-第二步：把文件修改到满意的程度，保存退出
+-第三步：git add[文件名]
+-第四步：git commit -m“日志信息”（注：此时commit一定不能带具体文件名）
+```
+
+53、拉取
+
+```
+-pull=fetch+merge
+-git fetch[远程库地址别名][远程分支名]
+-git merge[远程库地址别名/远程分支名]
+```
+
+54、Github解决冲突
+
+```
+如果不是基于Github远程库的最新版所做的修改，不能推送，必须先拉取
+```
+
+ 55、Github免密登录
+
+```
+使用SSH
 ```
 
