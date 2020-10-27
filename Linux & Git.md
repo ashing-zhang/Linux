@@ -868,5 +868,82 @@ EOF
 !
 ```
 
+93.创建虚拟环境
+
+```shell
+virtualenv 虚拟环境名 （--python=python版本号）   # 括号内为可选
+```
+
+94.激活虚拟化环境
+
+```shell
+source 虚拟环境名称/bin/activate
+```
+
+95.tmux
+
+```shell
+1.ctrl+B+%  # 竖分屏
+2.ctrl+B+"  # 横分屏
+3.ctrl+C    # 新建一个窗口（在同一个会话里）
+4.ctrl+B+p  # 切换到上一个窗口
+5.ctrl+B+n  # 切换到下一个窗口
+```
+
+96.vim: normal模式和编辑模式间切换
+
+```shell
+1.# vim是vi改进版;vim和其他很多编辑器的区别在于多种模式
+2.# vim可以安装插件
+3.# 使用i（insert）进入编辑模式，开始输入文字；i表示(insert)，a(append)，o(open a line below); A(append after line), I(insert before line), 0(open a line above)
+4.# 使用Esc又可以回到normal模式（可以使用ctrl+c或者ctrl+[代替esc）
+5.:wq # 保存退出（write and quit）
+```
+
+97.vim: visual模式
+
+```shell
+1.# normal模式下使用v进入visual选择
+2.# 使用V选择行
+3.# 使用ctrl+v进行方块选择
+```
+
+98.vim:编辑模式
+
+```shell
+1.ctrl+h # 删除上一个字符
+2.ctrl+w # 删除上一个单词
+3.ctrl+u # 删除当前行
+4.ctrl+a # 移到行首
+5.ctrl+e # 移到行末
+6.ctrl+b # 往前移动
+7.ctrl+f # 往后移动
+8.gi # 快速跳转到最后一次编辑的地方并进入插入模式
+```
+
+ 99.vim:快速修改（normal模式下）
+
+```shell
+1.# r(replace),c(change),s(substitute),例如：caw（change around word）可以将单词删除
+```
+
+100.vim:语法高亮（normal模式）
+
+```shell
+：syntax on
+```
+
+101.vim:设置行号（normal）
+
+```shell
+:set nu
+```
+
+102.vim:文本对象操作方式
+
+```shell
+[number]<command>[text object]:number表示次数；command是命令：d，c,y(yank)等；text object是要操作的文本对象，比如单词w,句子s，段落p
+```
+
 
 
