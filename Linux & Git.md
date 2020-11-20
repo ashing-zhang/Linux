@@ -1,4 +1,12 @@
-1、创建python虚拟环境：virtualenv 虚拟环境名称 [-p python版本的路径]
+1、创建python虚拟环境
+
+```shell
+# 安装virtualenv
+sudo pip install virtualenv	# 方法一
+codna create -n env_name python=python版本
+# 创建虚拟环境
+virtualenv 虚拟环境名称 [-p python版本的路径]
+```
 
 2、删除python虚拟环境：rmvirtualenv  虚拟环境名称
 
@@ -1169,5 +1177,65 @@ cat /dev/null > messages  # 清空messages文件
 > - --help 列出指令格式。
 > - --version 列出版本讯息。
 
+134.linux挂载
 
+> - 将一个设备（通常是存储设备）挂接到一个已存在的目录上。（这个目录可以不为空，但挂载后这个目录下以前的内容将不可用。）
+> - linux操作系统将所有的设备都看作文件，它将整个计算机的资源都整合成一个大的文件目录。我们要访问存储设备中的文件，必须将文件所在的分区挂载到一个已存在的目录上，然后通过访问这个目录来访问存储设备。
+
+135./etc/resolv.conf
+
+> resolv.conf的关键字主要有四个，分别是：
+>
+> nameserver  //定义DNS服务器的IP地址
+>
+> domain    //定义本地域名
+>
+> search     //定义域名的搜索列表
+>
+> sortlist     //对返回的域名进行排序
+
+136.VPN：在公用网络上建立专用网络(虚拟一个局域网)
+
+> - VPN用户和VPN服务器之间的通讯是加密的
+> - VPN网关一般采用双网卡结构。内网卡接入内部局域网络，外网卡使用公共IP接入Internet。
+
+137.**non-login shell 继承了上一个进程的用户自定变量，而 login shell 没有继承。**
+
+```shell
+su - 用户名	# 以 login shell 登录到另一个账户
+su 用户名	# 以 non-login shell 登录到另一个账户
+```
+
+138.login shell 的 PWD 变成了 当前用户的 HOME 目录（～），而 non-login shell 则继承了父进程的工作目录。
+
+139.服务器安装ssh
+
+```shell
+apt-get install openssh-server
+```
+
+140.针对linux root 目录下没有.ssh目录的解决办法
+
+```shell
+#  .ssh 是记录密码信息的文件夹，如果没有登录过root的话，就没有 .ssh 文件夹，因此登录 localhost ，并输入密码就会生成了。
+ssh localhost
+```
+
+141.linux安装anaconda后添加环境变量
+
+```shell
+# 修改配置信息
+sudo vim /etc/profile
+# 文件末尾添加anaconda的bin的位置
+export PATH=$PATH:/home/ashing-zhang/anaconda3/bin
+# 键入python命令检验anaconda是否配置成功
+```
+
+142.linux安装pip
+
+```shell
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+pip -V  # 查看pip版本
+```
 
